@@ -1,0 +1,126 @@
+    1  setxkbmap fr
+    2  ls
+    3  cd file
+    4  cd Downloads/
+    5  ls
+    6  cd ..
+    7  ls
+    8  cd core
+    9  ls
+   10  cd Downloads/
+   11  ls
+   12  cd TP4
+   13  less TP4
+   14  file TP4
+   15  ls -a
+   16  mount TP4
+   17  ls
+   18  mkdir mount
+   19  sudo mount TP4 mount/
+   20  ls
+   21  cd mount
+   22  ls
+   23  cd f2
+   24  file f2
+   25  file f3
+   26  file f6
+   27  ls -a
+   28  ls
+   29  fsstat ..
+   30  cd ..
+   31  fsstat mount
+   32  ls
+   33  fls TP4
+   34  icat TP4 5
+   35* 
+   36  fls TP4
+   37  icat TP4 5 | hexdump > f1_en_hexa
+   38  icat TP4 7 | hexdump > f2_en_hexa
+   39  icat TP4 9 | hexdump > f3_en_hexa
+   40  icat TP4 11 | hexdump > f4_en_hexa
+   41  icat TP4 13 | hexdump > f5_en_hexa
+   42  icat TP4 15 | hexdump > f6_en_hexa
+   43  icat TP4 17 | hexdump > f7_en_hexa
+   44  ls
+   45  less f2_en_hexa 
+   46  less f3_en_hexa 
+   47  less f4_en_hexa 
+   48  less f5_en_hexa 
+   49  less f6_en_hexa 
+   50  less f7_en_hexa 
+   51  cd mount
+   52  ls
+   53  icat TP4 17 > f7
+   54  cd ..
+   55  icat TP4 17 > f7
+   56  icat TP4 5 > f1
+   57  icat TP4 7 > f2
+   58  icat TP4 9 > f3
+   59  icat TP4 11 > f4
+   60  icat TP4 13 > f5
+   61  icat TP4 15 > f6
+   62  ls
+   63  icat TP4 130867 > MBR
+   64  ls
+   65  strings TP4 | less
+   66  opensssl enc -aes-128-ctr -in f1 -out f1.enc 
+   67  openssl enc -aes-128-ctr -in f1 -out f1.enc 
+   68  note : il y a toujours salted au début du fichier, meme en appliquant 2 fois cet encryptage
+   69  less f1 | hexdump
+   70  less f1.enc
+   71  openssl enc -d -aes-128-ctr -in f1 -out f1.enc -nosalt
+   72  ls
+   73  less f1.enc
+   74  salted n'apparait plus avec l'option -nosalt
+   75  hexdump -c f1.enc | less
+   76  openssl enc -d -aes-128-cbc -in f1 -out f1.enc -nosalt
+   77  on a un message d'erreur !
+   78  nb de blocs pas rond, ça peut pas marcher
+   79  seul truc compatible : un mode sans bourrage
+   80  donc forcément ctr
+   81  ls
+   82  on répète cette opération sur tous les fichiers
+   83  openssl enc -d -aes-128-ctr -in f2 -out f2.enc -nosalt
+   84  openssl enc -d -aes-128-ctr -in f3 -out f3.enc -nosalt
+   85  openssl enc -d -aes-128-ctr -in f5 -out f5.enc -nosalt
+   86  ls
+   87  file f5
+   88  openssl enc -d -aes-128-ctr -in f5 -out f5.enc -nosalt
+   89  ls
+   90  file f5.enc
+   91  Le mdp à utiliser est babar
+   92  Le bon fichier est le 5 ! f5.enc est un pdf
+   93  firefox f5.enc &
+   94  ls
+   95  mkdir chiffrement
+   96  cd chiffrement/
+   97  openssl genrsa -out Key_Lucille.pem 2048
+   98  openssl rsa -in Key_Lucille.pem -text -noout
+   99  openssl rsa -in Key_Lucille.pem -pubout -out PubKey_Lucille.pem
+  100  openssl rsa -in Key_Lucille.pem -aes128 -out ProtectedKey_Lucille.pem
+  101  ls
+  102  Note : protectedKey_Lucille est protégée par mdp habituel
+  103  echo "coucou" > plaintext
+  104  openssl rsaut1 -encrypt -in plaintext -pubin -inkey PubKey_Lucille.pem -out ciphertext
+  105  openssl rsautl -encrypt -in plaintext -pubin -inkey PubKey_Lucille.pem -out ciphertext
+  106  ls
+  107  openssl rsaut1 -decrypt -in cipher -inkey ProtectedKey_Lucille.pem -out clear
+  108  openssl rsautl -decrypt -in cipher -inkey ProtectedKey_Lucille.pem -out clear
+  109  openssl rsautl -decrypt -in ciphertext -inkey ProtectedKey_Lucille.pem -out clear
+  110  ls
+  111  diff clear plaintext
+  112  Obtenir une signature :
+  113  openssl rand -out plaintext 4000
+  114  ls
+  115  openssl dgst -sha256 -out digest plaintext
+  116  ls
+  117  less digest
+  118  openssl rsautl -sign -in digest -inkey ProtectedKey_Lucille.pem -out signature
+  119  ls
+  120  less signature
+  121  openssl rsautl -verify -in signature -pubin -inkey PubKey_Lucille.pem -out resultat
+  122  diff resultat digest 
+  123  openssl req -new -key ProtectedKey_Lucille.pem -out request.pem
+  124  openssl req -in request.pem -text -noout
+  125  ls
+  126  history > tp4.txt

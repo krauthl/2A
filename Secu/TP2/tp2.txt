@@ -1,0 +1,182 @@
+    1  setxkbmap fr
+    2  cd Downloads/
+    3  ls
+    4  cd TP2/
+    5  ls
+    6  cd EX1
+    7  ls
+    8  sum -s
+    9  less l1.ps
+   10  less l2.ps
+   11  less target
+   12  sum - l1.ps
+   13  sum -s l1.ps
+   14  sum -s l2.ps
+   15  sum -s target
+   16  less target
+   17  azdhjefudfuid > 2preimage
+   18  cat azhamzdhazdbh > 2preimage
+   19  cat "azhamzdhazdbh" > 2preimage
+   20  cat > 2preimage
+   21  ls
+   22  less 2preimage
+   23  sum -s 2preimage 
+   24  atom 2preimage 
+   25  gedit 2preimage 
+   26  sum -s 2preimage 
+   27  gedit 2preimage 
+   28  sum -s 2preimage 
+   29  sum -s targetr
+   30  sum -s target
+   31  gedit 2preimage 
+   32  sum -s 2preimage 
+   33  gedit 2preimage 
+   34  sum -s 2preimage 
+   35  gedit target
+   36  sum -s 2preimage 
+   37  sum -s target
+   38  man sum
+   39  gedit target 2preimage 
+   40  sum -s 2preimage 
+   41  sum -s target 
+   42  gedit target 2preimage 
+   43  hexdump target 
+   44  hexdump 2preimage 
+   45  printf "\xad\xde\xef\xbe" 
+   46  printf "\xad\xde\xef\xbe" > 2preimage 
+   47  hexdump 2preimage 
+   48  sum -s target 
+   49* sum -s 
+   50  hexdump target 
+   51  md5sum l1.ps
+   52  md5sum l2.ps
+   53  less l1.ps
+   54  hexdump l1.ps
+   55  hexdump l1.ps | head
+   56  hexdump l2.ps | head
+   57  cmp l1.ps l2.ps
+   58  cmp l1.ps l2.ps > diff
+   59  less diff
+   60  rm diff
+   61  file l1.ps
+   62  open l1.ps
+   63  xdg-open l1.ps
+   64  xdg-open l2.ps
+   65  cd .;
+   66  cd ..
+   67  ls
+   68  bunzip2 demo.dd.bz2 
+   69  ls
+   70  mkdir mnt
+   71  sudo mount demo.dd mnt/
+   72  fsstat demo.dd
+   73  fls demo.dd
+   74  ls
+   75  fless demo.dd/hello
+   76  man fls
+   77  fls -u demo.dd
+   78  man fls
+   79  fls -d demo.dd
+   80  ils -e demo.dd
+   81  ils demo.dd
+   82  ils -e demo.dd
+   83  istat demo.dd 7
+   84  icat demo.dd 7
+   85  istat demo.dd 2
+   86  istat demo.dd 3
+   87  istat demo.dd 5
+   88  icat demo.dd 5
+   89  istat demo.dd 5
+   90  istat demo.dd 6
+   91  istat demo.dd 7
+   92  istat demo.dd 8
+   93  istat demo.dd 9
+   94  istat demo.dd 10
+   95  fsstat demo.dd
+   96  fls demo.dd
+   97  ils -e demo.dd
+   98  ls
+   99  cd mnt
+  100  ls
+  101  ls -a
+  102  cd .
+  103  ls
+  104  cd ..
+  105  ls
+  106  istat demo.dd 9
+  107  istat demo.dd 327027
+  108  istat demo.dd 327028
+  109  istat demo.dd 327029
+  110  istat demo.dd 327030
+  111  ls
+  112  icat demo.dd 7
+  113  icat demo.dd 9
+  114  ls
+  115  cd mnt
+  116  ls
+  117  cd ..
+  118  umount mnt
+  119  ls
+  120  cd mnt
+  121  ls
+  122  cd ..
+  123  cd EX2
+  124  ls
+  125  bunzip 2 system.dd.bz2 
+  126  bunzip2 system.dd.bz2 
+  127  ls
+  128  mkdir mnt
+  129  sudo mount system.dd mnt
+  130  ls
+  131  cd mnt
+  132  ls
+  133  fsstat system.dd
+  134  cd ..
+  135  ls
+  136  fsstat system.dd
+  137  fls system.dd
+  138  fls system.dd 1604467
+  139  icat system.dd 1604467
+  140  icat system.dd 5 > b.tar.bz2
+  141  icat system.dd 7 > c.tar.bz2
+  142  tar tvf b.tar.bz2 
+  143  tar tvf a.tar.bz2 
+  144  tar tvf c.tar.bz2 
+  145  tar jxvf c.tar.bz2 
+  146  file new.fs
+  147  fls new.fs
+  148  icat new.fs 12
+  149  foremost system.dd
+  150  ls
+  151  cd output/
+  152  ls
+  153  less audit.txt 
+  154  cd ..
+  155  ls
+  156  rm -rf output
+  157  foremost system.dd
+  158  ls
+  159  cd output/
+  160  ls
+  161  cd ..
+  162  ls
+  163  cd output/
+  164  rm -rf output
+  165  ls
+  166  cd ..
+  167  ls
+  168  rm -rf output
+  169  ls
+  170  foremost new.fs
+  171  ls
+  172  cd output/
+  173  ls
+  174  cd pdf/
+  175  ls
+  176  xdg-open 00001026.pdf 
+  177  hexdump 00001026.pdf 
+  178  ls
+  179  cp 00001026.pdf ~
+  180  cd
+  181  ls
+  182  history > tp2.txt

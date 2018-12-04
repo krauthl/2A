@@ -1,0 +1,117 @@
+    1  setxkbmap fr
+    2  ls
+    3  cd core
+    4  cd TP3
+    5  ls
+    6  cd EX1
+    7  ls
+    8  dd if=/dev/random of=key1 bs=1 count=1
+    9  ls
+   10  less key1
+   11  hexdump key1
+   12  openssl rand -out key2 1
+   13  ls
+   14  hexdump key2
+   15  mv key1 key
+   16  rm key1 key2
+   17  ls
+   18  rm key
+   19  dd if=/dev/random of=key bs=1 count=7
+   20  hexdump key
+   21  dd if=/dev/random of=init bs=1 count=7
+   22  hexdump init
+   23  ls
+   24* 
+   25  dd if=/dev/random of=key bs=1 count=16
+   26  dd if=/dev/random of=init bs=1 count=16
+   27  cat "coucou" > coucou
+   28  ls
+   29* 
+   30  c'etait pas ca
+   31  ls
+   32  hexdump key
+   33  openssl enc -e -des-ecb -in coucou -out ciphertext -K 3104 18387c807728
+   34  openssl enc -e -des-ecb -in coucou -out ciphertext -K 310418387c807728
+   35  ls
+   36  hexdump cy
+   37  hexdump ciphertext 
+   38  hexdump -c ciphertext 
+   39  openssl enc -e -cipher -in coucou -out ciphertext2 -K 3104 1838 7c80 7728 049b 7f6b 9309 aa09
+   40  hexdump coucou
+   41  hexdump -c coucou
+   42  less coucou
+   43  cat "coucou" > coucou
+   44  less coucou
+   45  ls
+   46  hexdump ciphertext
+   47  ls
+   48  rm coucou
+   49  cat "coucou" > coucou
+   50  ls
+   51  less coucou
+   52  openssl enc -e -des-ecb -in coucou -out ciphertext2 -K 3104 1838 7c80 7728 049b 7f6b 9309 aa09
+   53  openssl enc -e -des-ecb -in coucou -out ciphertext2 -K 3104 1838 7c80 7728
+   54  openssl enc -e -des-ecb -in coucou -out ciphertext2 -K 310418387c807728
+   55  ls
+   56  hexdump ciphertext2
+   57  hexdump -c ciphertext2
+   58  openssl enc -d -des-ecb -in coucou -out ciphertext2 -K 310418387c807728
+   59  openssl enc -d -des-ecb -in ciphertext2 -out coucou -K 310418387c807728
+   60  dd if=/dev/urandom of=text bs=1 count=128
+   61  ls
+   62  rm text
+   63  chmod +x differential.bash
+   64  rm ciphertext
+   65  mv ciphertext2 ciphertext
+   66  ls
+   67  gedit differential.bash 
+   68  cd ..
+   69  cd >EX2
+   70  cd EX2
+   71  ls
+   72  cd ..
+   73  cp EX1/differential.bash EX2
+   74  ls
+   75  cd EX2
+   76  ls
+   77  mv differential.bash error.bash
+   78  dd if=/dev/random of=text count=64
+   79  ls
+   80  rm text
+   81  dd if=/dev/random of=text bs=1 count=64
+   82  hexdump text
+   83  rm text
+   84  dd if=/dev/random of=text bs=1 count=64
+   85  hexdump text
+   86  cd ..
+   87  ls
+   88  cd EX1
+   89  ls
+   90  hexdump key
+   91  cd ..
+   92  cp EX1/key EX2
+   93  cd EX2
+   94  ls
+   95  openssl enc -d -des-ecb -in text -out text.enc -K 310418387c807728
+   96  openssl enc -e -des-ecb -in text -out text.enc -K 310418387c807728
+   97  ls
+   98  hexdump text.enc
+   99  gedit error.bash
+  100  gedit error.bash &
+  101  ls
+  102  hexdump key
+  103  chmod +x error.bash
+  104  ./error.bash
+  105  vim error.bash 
+  106  ls
+  107  openssl enc -e -des-ecb -in text -out text.enc -K 310418387c807728
+  108  vim error.bash 
+  109  ./error.bash
+  110  ./error.bash > res
+  111  less res
+  112  openssl enc -e -des-cbc -in text -out text.enc -K 310418387c807728
+  113  openssl enc -e -des-cbc -in text -out text.enc -K 310418387c807728 -iv 310418387c807729
+  114  vim error.bash 
+  115  ./error.bash > res
+  116  less res
+  117  history > tp3.txt

@@ -1,0 +1,97 @@
+    1  cd Downloads/
+    2  ls
+    3  setxkbmap fr
+    4  firefox &
+    5  cd Downloads
+    6  ls
+    7  tar zxvf TP1.tar-1
+    8  ls
+    9  cd TP1/
+   10  ls
+   11  cd EX1
+   12  ls
+   13  firefox test.pdf &
+   14  hexdump test
+   15  less test
+   16  xdg-open test
+   17  xdg-open test.pdf
+   18  ls
+   19  q
+   20  dd if=/dev/urandom of=dummy bs=1 count=30
+   21  file test
+   22  file dummy
+   23  mv dummy dummy.pdf
+   24  file dummy
+   25  hexdump test |head
+   26  hexdump test
+   27  hexdump test |head
+   28  hexdump test.pdf |head
+   29  ls
+   30  ls -ls dummy
+   31  ls -ls dummy.pdf
+   32  ls -l dummy.pdf
+   33  file dummy.pdf
+   34  hexdum test | head
+   35  hexdump test | head
+   36  printf "\x25\x50\x44\x46\x2d\x31" | cat -dummy >dummy.1
+   37  printf "\x25\x50\x44\x46\x2d\x31" | cat -dummy > dummy.1
+   38  printf "\x25\x50\x44\x46\x2d\x31" | cat - dummy > dummy.1
+   39  ls
+   40  mv dummy.pdf dummy
+   41  printf "\x25\x50\x44\x46\x2d\x31" | cat - dummy > dummy.1
+   42  file dummy.1
+   43  cd ..
+   44  cd EX2
+   45  ls
+   46  dd if=/dev/urandon of=dummy bs=50 count=1024
+   47  dd if=/dev/urandom of=dummy bs=50 count=1024
+   48  tar -cvf archive.tar dummy
+   49  ls
+   50  tar -xvf archive.tar
+   51  hexdump archive.tar | head
+   52  hexdump archive | head
+   53  ls
+   54  echo "attention ex1 : rajouter un conv=notrunc à la fin pour ne pas tronquer le fichier"
+   55  hexdump archive.tar | head
+   56  man head
+   57  man hexdump
+   58  tail archive.tar 
+   59  hexdump archive.tar | tail
+   60  ls
+   61  ./fuzzing.bash
+   62  chmod +x fuzzing.bash 
+   63  ./fuzzing.bash
+   64  less fuzzing.bash 
+   65  ls
+   66  ./fuzzing.bash archiove.tar
+   67  ./fuzzing.bash archive.tar
+   68  ls
+   69  less log
+   70  less fuzzing.bash 
+   71  head -c 500 archive.tar
+   72  ls
+   73  echo "attention il y a des caractères non imprimables"
+   74  hexdump -n 6 -s 257 archive.tar 
+   75  hexdump -c -n 6 -s 257 archive.tar 
+   76  echo "-c pour interpréter ca comme des caractères ascii"
+   77  less fuzzing.bash 
+   78  atom fuzzing.bash 
+   79  vim fuzzing.bash 
+   80  cd D
+   81  cd Downloads/
+   82  ls
+   83  cd TP1/
+   84  cd EX2
+   85  ls
+   86  vim fuzzing.bash
+   87  ./fuzzing.bash archive.tar
+   88  ls
+   89  less log
+   90  cd ..
+   91  cd EX3
+   92  ls
+   93  atom
+   94  gediyt
+   95  gedit
+   96  history
+   97  history > TP1Secu.txt

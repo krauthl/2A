@@ -24,11 +24,12 @@ void kernel_start(void)
     // //Démarrage du processus par défaut
     // idle();
 
-    //Démasquage des interruptions externes
 
-    masque_IRQ(0, false);
-    reglage_frequence();
     init_traitant_IT(32, traitant_IT_32);
+    reglage_frequence();
+    masque_IRQ(0, false);
+
+    //Démasquage des interruptions externes
     sti();
 
     while (1) {

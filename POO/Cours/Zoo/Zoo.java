@@ -32,6 +32,14 @@ class Zoo {
         return sb.toString();
 
         // alternative:
-        // return "le zoo " + nom + "contient:" + animaux; 
+        // return "le zoo " + nom + "contient:" + animaux;
+    }
+
+    public int cout(){
+        int somme = 0;
+        for (Animal a : this.animaux){
+            somme += a.cout_animal();
+        }
+        return somme;
     }
 }

@@ -37,4 +37,12 @@ public class Animal {
     public void setRegime(Regime r){
         this.regime = r;
     }
+
+    public int cout_animal(){
+      if (this.regime.nom == "graines"){
+          return 1;
+      } else {
+          return this.poids * this.regime.prix_kg;
+      }
+    }
 }

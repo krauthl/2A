@@ -7,5 +7,6 @@ public class TestZoo {
         Ensimag.ajouteAnimal(new Canard("Donald", 0, "bleu"));
         System.out.println(Ensimag);
         Ensimag.crier();
+        System.out.println(Ensimag.cout());
     }
 }

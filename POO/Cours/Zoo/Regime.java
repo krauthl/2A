@@ -1,6 +1,6 @@
 public class Regime {
-    private String nom;
-    private int prix_kg;
+    public String nom;
+    public int prix_kg;
 
     /*Constructeur de régime*/
     public Regime(String nom, int prix){
